@@ -22,7 +22,7 @@ type pagination struct {
 	around int // how many pages we want to link before and after the actual page
 }
 
-// Paginate validates the input and returns an array of strings with separator
+// Paginate validates the input and returns an array of links with separator
 func Paginate(currentPage, totalPages, boundaries, around int) ([]string, error) {
 	p := pagination{currentPage, totalPages, boundaries, around}
 
@@ -58,7 +58,7 @@ func (p pagination) validate() error {
 	return nil
 }
 
-// paginate returns an array of strings with separator
+// paginate returns an array of links with separator
 func (p pagination) paginate() []string {
 	// initialize map
 	var pageMap = make(map[int]bool)
