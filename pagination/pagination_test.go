@@ -21,7 +21,7 @@ func TestPagination(t *testing.T) {
 
 	// run tests
 	for i, r := range result {
-		t.Log("Test case: %v", i)
+		t.Log("Test case:", i)
 
 		res, err := Paginate(
 			r.pagination.currentPage,
